@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Web Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .profile-image {
+        max-width: 200px;
+        border-radius: 50%;
+      }
+
+      #colorChangeHeader {
+        font-size: 36px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slack Name -->
+    <h1 data-testid="slackUserName" id="colorChangeHeader">
+      Abdulakeem Bolarinwa
+    </h1>
+
+    <!-- Slack Display Picture -->
+    <img
+      src="/image/meekah.jpg"
+      alt="abdulakeem"
+      class="profile-image"
+      data-testid="slackDisplayImage"
+    />
+
+    <!-- Current Day of the Week -->
+    <p data-testid="currentDayOfTheWeek">Monday</p>
+
+    <!-- Current UTC Time -->
+    <p data-testid="currentUTCTime"></p>
+
+    <!-- Track -->
+    <p data-testid="myTrack">Frontend</p>
+
+    <!--Github URL-->
+
+    <a data-testid="githubURL" href="https://github.com/Meekah1/hngx-task-1"
+      >Github Url</a
+    >
+
+    <script>
+      // JavaScript code to display current UTC time
+      function displayCurrentTime() {
+        const currentTimeElement = document.querySelector(
+          '[data-testid="currentUTCTime"]'
+        );
+        setInterval(() => {
+          const currentTimestamp = Date.now();
+          //   const utcTimeString = currentDate.toUTCString();
+          currentTimeElement.textContent = `Current UTC Time (Milliseconds): ${currentTimestamp}`;
+        }, 1000);
+        // const currentTimestamp = Date.now();
+        // currentTimeElement.textContent = `Current UTC Time (Milliseconds): ${currentTimestamp}`;
+      }
+
+      // Call the function to display current UTC time
+      displayCurrentTime();
+
+      function changeColor() {
+        const header = document.getElementById("colorChangeHeader");
+        const randomColor = Math.random() < 0.5 ? "green" : "purple";
+        header.style.color = randomColor;
+      }
+
+      changeColor();
+
+      setInterval(changeColor, 2000);
+    </script>
+  </body>
+</html>
