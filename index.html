@@ -11,8 +11,8 @@
       }
 
       .profile-image {
-        max-width: 200px;
-        border-radius: 50%;
+        max-width: 300px;
+        border-radius: 20%;
       }
 
       #colorChangeHeader {
@@ -23,14 +23,12 @@
   </head>
   <body>
     <!-- Slack Name -->
-    <h1 data-testid="slackUserName" id="colorChangeHeader">
-      Abdulakeem Bolarinwa
-    </h1>
+    <h1 data-testid="slackUserName">Abdulakeem Bolarinwa</h1>
 
     <!-- Slack Display Picture -->
     <img
       src="/image/meekah.jpg"
-      alt="abdulakeem"
+      alt="Abdulakeem Bolarinwa"
       class="profile-image"
       data-testid="slackDisplayImage"
     />
@@ -61,22 +59,20 @@
           //   const utcTimeString = currentDate.toUTCString();
           currentTimeElement.textContent = `Current UTC Time (Milliseconds): ${currentTimestamp}`;
         }, 1000);
-        // const currentTimestamp = Date.now();
-        // currentTimeElement.textContent = `Current UTC Time (Milliseconds): ${currentTimestamp}`;
       }
 
       // Call the function to display current UTC time
       displayCurrentTime();
 
-      function changeColor() {
-        const header = document.getElementById("colorChangeHeader");
-        const randomColor = Math.random() < 0.5 ? "green" : "purple";
-        header.style.color = randomColor;
-      }
+      // function changeColor() {
+      //   const header = document.getElementById("colorChangeHeader");
+      //   const randomColor = Math.random() < 0.5 ? "green" : "purple";
+      //   header.style.color = randomColor;
+      // }
 
-      changeColor();
+      // changeColor();
 
-      setInterval(changeColor, 2000);
+      // setInterval(changeColor, 2000);
     </script>
   </body>
 </html>
